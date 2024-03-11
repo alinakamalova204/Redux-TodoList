@@ -6,10 +6,10 @@ import {edit2} from 'react-icons-kit/feather/edit2'
 import { removeTodo, handleCheckbox } from '../redux/todoapp/actions';
 
 export const Todos = ({handleEditClick, editFormVisibility}) => {
-  // dispatch function to dispatch an action
+
   const dispatch = useDispatch();
 
-  // getting todos from the store
+
   const todos = useSelector((state)=>state.operationsReducer);
   return todos.map((todo)=>(
     <div key={todo.id} className='todo-box'>

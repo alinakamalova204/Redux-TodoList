@@ -4,21 +4,15 @@ import { addTodo, handleEditSubmit } from '../redux/todoapp/actions';
 
 export const Form = ({editFormVisibility, editTodo, cancelUpdate}) => {
 
-  // dispatch function to dispatch an action
   const dispatch = useDispatch();
-
-  // todo value state for normal add todo form
   const [todoValue, setTodoValue]=useState('');
-
-  // state for if someone changes the (to edit) value in update form
   const [editValue, setEditValue]=useState('');
 
-  // useEffect is to show the (to edit) value in update form
   useEffect(()=>{
     setEditValue(editTodo.todo);
   },[editTodo])
 
-  // normal add todo submit
+
   const handleSubmit=(e)=>{
       e.preventDefault();
       let date = new Date();
@@ -32,7 +26,6 @@ export const Form = ({editFormVisibility, editTodo, cancelUpdate}) => {
       dispatch(addTodo(todoObj))
   }
 
-  // update form submit
   const editSubmit = (e) =>{
     e.preventDefault();
     let editedObj={
