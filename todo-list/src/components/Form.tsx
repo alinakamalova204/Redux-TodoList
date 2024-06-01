@@ -2,7 +2,7 @@ import React,{useState, useEffect} from 'react'
 import { useDispatch } from 'react-redux';
 import { addTodo, handleEditSubmit } from '../redux/todoapp/actions';
 
-export const Form = ({editFormVisibility, editTodo, cancelUpdate}) => {
+export const Form = ({editFormVisibility, editTodo, cancelUpdate} : any) => {
 
   const dispatch = useDispatch();
   const [todoValue, setTodoValue]=useState('');
@@ -13,7 +13,7 @@ export const Form = ({editFormVisibility, editTodo, cancelUpdate}) => {
   },[editTodo])
 
 
-  const handleSubmit=(e)=>{
+  const handleSubmit=(e: any)=>{
       e.preventDefault();
       let date = new Date();
       let time = date.getTime();
@@ -26,7 +26,7 @@ export const Form = ({editFormVisibility, editTodo, cancelUpdate}) => {
       dispatch(addTodo(todoObj))
   }
 
-  const editSubmit = (e) =>{
+  const editSubmit = (e: any) =>{
     e.preventDefault();
     let editedObj={
       id: editTodo.id,

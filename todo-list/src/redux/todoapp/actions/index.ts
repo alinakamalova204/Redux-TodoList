@@ -4,7 +4,7 @@ export const REMOVE_TODO = 'REMOVE_TODO';
 export const UPDATE_TODO = 'UPDATE_TODO';
 export const UPDATE_CHECKBOX = 'UPDATE_CHECKBOX';
 
-export const addTodo=(payload)=>{
+export const addTodo=(payload: any)=>{
     return{
         type: ADD_TODO,
         payload
@@ -17,21 +17,21 @@ export const deleteAll = () =>{
     }
 }
 
-export const removeTodo=(payload)=>{
+export const removeTodo=(payload: any)=>{
     return{
         type: REMOVE_TODO,
         payload
     }
 }
 
-export const handleEditSubmit=(payload)=>{
+export const handleEditSubmit=(payload: any)=>{
     return{
         type: UPDATE_TODO,
         payload
     }
 }
 
-export const handleCheckbox=(payload)=>{
+export const handleCheckbox=(payload: any)=>{
     return{
         type: UPDATE_CHECKBOX,
         payload

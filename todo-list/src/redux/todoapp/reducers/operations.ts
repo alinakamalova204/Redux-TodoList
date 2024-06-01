@@ -7,7 +7,7 @@ const initialState=[
     {id: 3, todo: 'Watering Plants', completed: true},
 ];
 
-export const operationsReducer=(state=initialState, action)=>{
+export const operationsReducer=(state=initialState, action: any)=>{
     switch(action.type){
         case ADD_TODO:
             return [...state, action.payload];
@@ -18,7 +18,7 @@ export const operationsReducer=(state=initialState, action)=>{
             return filteredTodos;
         case UPDATE_TODO:
             let data = action.payload;
-            const updatedArray=[];
+            const updatedArray: { id: number; todo: string; completed: boolean; }[]=[];
             state.map((item)=>{
                 if(item.id===data.id){
                     item.id = data.id;
@@ -29,7 +29,7 @@ export const operationsReducer=(state=initialState, action)=>{
             })
             return updatedArray;
         case UPDATE_CHECKBOX:
-            let todoArray=[];
+            let todoArray: { id: number; todo: string; completed: boolean; }[]=[];
             state.map((item)=>{
                 if(item.id===action.payload){
                     item.completed = !item.completed;
